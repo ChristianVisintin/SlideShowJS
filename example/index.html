@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="SlideShowJS.css">
+  <script src="../SlideShowJS.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <title>Slideshow</title>
+</head>
+<style type="text/css">
+body {
+  overflow-x: hidden;
+  font-family: "Century Gothic",sans-serif;
+}
+button {
+  display: inline-block;
+  padding: 2.5rem 3rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: black;
+  border: none;
+  border-radius: 5rem;
+}
+
+#btn1 {
+  background-color: #f26813;
+  float: left;
+}
+
+#btn1:hover {
+  background-color: #c4530d;
+}
+
+#btn2 {
+  float: right;
+  background-color: #1679b7;
+}
+
+#btn2:hover {
+  background-color: #106296;
+}
+
+</style>
+<body>
+  <div class="slideshow">
+    <img src="slideshow1/1.jpg"/>
+    <img src="slideshow1/2.jpg"/>
+    <img src="slideshow1/3.jpg"/>
+  </div>
+<br/>
+<div style="text-align: center; line-height: 2.5rem; height: 2.5rem; font-size: 2.5rem;">
+  <button id="btn1" onclick="slideUp()">Slide Up!</button>
+  SlideShowJS - Developed by Christian Visintin
+  <button id="btn2" onclick="slideDown()">Slide Down!</button>
+</div>
+</body>
+</html>

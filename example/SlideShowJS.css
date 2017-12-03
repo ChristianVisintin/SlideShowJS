@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+
+.slideshow {
+
+  width: 100vw;
+  height: 515px;
+  border: 1px solid black;
+  overflow: hidden;
+
+}
+
+.slideshow img {
+  width: 100%;
+  height: 515px;
+  float: left;
+}
