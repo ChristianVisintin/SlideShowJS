@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="SlideShowJS.css">
-  <script src="../SlideShowJS.js"></script>
+  <script src="SlideShowJS.js"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <title>Slideshow</title>
@@ -46,18 +46,40 @@ button {
   background-color: #106296;
 }
 
+#btn3 {
+  background-color: #e00850;
+  float: left;
+}
+
+#btn3:hover {
+  background-color: #a8053b;
+}
+
+#btn4 {
+  float: right;
+  background-color: #09ef33;
+}
+
+#btn4:hover {
+  background-color: #07b526;
+}
+
 </style>
 <body>
   <div class="slideshow">
-    <img src="slideshow1/1.jpg"/>
-    <img src="slideshow1/2.jpg"/>
-    <img src="slideshow1/3.jpg"/>
+    <img src="slideshow1/1.png"/>
+    <img src="slideshow1/2.png"/>
+    <img src="slideshow1/3.png"/>
   </div>
 <br/>
 <div style="text-align: center; line-height: 2.5rem; height: 2.5rem; font-size: 2.5rem;">
   <button id="btn1" onclick="slideUp()">Slide Up!</button>
   SlideShowJS - Developed by Christian Visintin
   <button id="btn2" onclick="slideDown()">Slide Down!</button>
+</div>
+<div style="text-align: center; line-height: 2.5rem; height: 2.5rem; font-size: 2.5rem;">
+  <button id="btn3" onclick="cover()">Cover!</button>
+  <button id="btn4" onclick="alert('Not implemented!')">?</button>
 </div>
 </body>
 </html>

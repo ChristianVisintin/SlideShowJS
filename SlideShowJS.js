@@ -115,4 +115,37 @@ function slideDownAnim(slideshowObj) {
   }, slideshowSpeed);
 }
 
+//COVER-UP!!!
+
+//Cover the current element with the second element of the sequence
+function cover() {
+  for(var i = 0; i < slideshow.length; i++) { //Slide all slideshows in web page
+    coverInit(slideshow[i]);
+  }
+}
+
+function coverInit(slideshowObj) {
+  var newElement = slideshowObj.currentElement; //Store the content of the first element
+  slideshowObj.currentElement = slideshowObj.element.firstChild.nextElementSibling.nextElementSibling; //change the current element with the second of the sequence
+  //Set the background image of the second element with the image of the displayed one and set padding-top to the height of the slideshow
+  slideshowObj.currentElement.setAttribute("style","background-image: url("+newElement.getAttribute("src")+"); background-size: "+slideshowObj.width+"px "+slideshowObj.height+"px; padding-top: "+slideshowObj.height+"px");
+  newElement.remove(); //Remove the displayed element
+  slideCounter = slideshowObj.height; //set slideCounter to the height of the slideshow div
+  slideshowObj.element.appendChild(newElement); //Append to the sequence the old displayed element
+  coverAnim(slideshowObj); //Make the animation
+}
+
+function coverAnim(slideshowObj) {
+
+  setTimeout(function() {
+    slideCounter -= growthRatio; //Decrease the slide counter every tick
+    slideshowObj.currentElement.style.paddingTop = slideCounter+"px"; //Decrease the padding-top
+    if(slideCounter >= 0) coverAnim(slideshowObj); //Do it till slideCounter is ge than 0
+    else { //When it's 0...
+      slideshowObj.currentElement.removeAttribute("style"); //Remove the padding-top
+    }
+  }, slideshowSpeed);
+
+}
+
 window.addEventListener("load",slideshowInit,false);
