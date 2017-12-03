@@ -1,6 +1,6 @@
 # SlideShowJS
 
-~ An easy SlideShow maker for web ~ Version 1712-3
+~ An easy SlideShow maker for web ~ Version 1712-4
 
 ## Introduction
 
@@ -22,6 +22,11 @@ Remember that a single call to a function moves the elements <b>just once!!!</b>
       <li>slideDown() - Slide the elements down once</li>
       </ul>
   </li>
+   <li>Cover
+      <ul>
+         <li>cover() - cover the current element with the second in the sequence (requires <b>images</b>)</li>
+      </ul>
+   </li>
 </ul>
  
  ## Customizable parameters
@@ -88,7 +93,7 @@ Remember that a single call to a function moves the elements <b>just once!!!</b>
  
   For every slideshow div present in the slideshow object array calls the function which carries of animating the elements movement. (calls slideDownInit())
   
-### slideDownInit()
+### slideDownInit(slideshowObj)
 
 Initialize the slideDown animation. What basically it does is:
 <ul>
@@ -100,7 +105,7 @@ Initialize the slideDown animation. What basically it does is:
   <li>Calls slideDownAnim()</li>
  </ul>
   
-### slideDownAnim()
+### slideDownAnim(slideshowObj)
 
  Is the function called by slideDownInit and carries of making the animation "slideDown". What it does is basically:
  <ul>
@@ -121,6 +126,43 @@ Initialize the slideDown animation. What basically it does is:
       </li>
  </ul>
           
+ ### function cover()
+ 
+   For every slideshow div present in the slideshow object array calls the function which carries of animating the elements movement. (calls coverInit())
+   
+### function coverInit(slideshowObj)
+
+Initialize the cover animation. What it does is basically:
+
+<ul>
+   <li>Store the content of the current element in a variable</li>
+   <li>Change the currentElement of slideshowObj with the second in the sequence</li>
+   <li>Set the style attribute of the second element with a padding-top equal to the height of the slideshow div and a background-image which is the same of the current displayed element (that's why it requires images as elements).</li>
+   <li>Remove the displayed element</li>
+   <li>set slideCounter to the height of the slideshow div</li>
+   <li>Append the old displayed element at the end of the slideshow sequence</li>
+   <li>Call coverAnim()</li>
+ </ul>
+ 
+ ### function coverAnim(slideshowObj)
+ 
+  Is the function called by coverInit() and carries of making the animation "cover". What it does is basically:
+ <ul>
+  <li>Inside a timeout with <b>slideshowSpeed</b> as timeout: decrease the value of slideCounter of growthRatio and apply the padding-top attribute to the second element of the slideshow. Then it checks if the value of slideCounter is greater or equal than 0.
+    <ul>
+       <li>If the condition is true...
+          <ul>
+             <li>calls coverAnim()</li>
+          </ul>
+       </li>
+       <li>If the condition is false... (which means the animation ended)
+          <ul>
+             <li>Removes the style attribute to the displayed element (which was the second in the sequence)</li>
+          </ul>
+       </li>
+     </ul>
+   </li>
+   </ul>
  
  ## Credits
  
