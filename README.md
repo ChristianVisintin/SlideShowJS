@@ -167,13 +167,13 @@ Initialize the cover animation. What it does is basically:
  ## Credits
  
  Developed by Christian Visintin <br/>
- Copyright © 2017 Christian Visintin - christian.visintin1997@gmail.com<br/>
+ Copyright © 2017 Christian Visintin<br/>
  
  ## License
  
 ###  SlideShowJS
  	 
-   Copyright (C) 2017 Christian Visintin - christian.visintin1997@gmail.com
+   Copyright (C) 2017 Christian Visintin
 
    SlideShowJS is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
